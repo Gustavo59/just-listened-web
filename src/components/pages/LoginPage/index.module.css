@@ -1,0 +1,28 @@
+.loginPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background: url("/login-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.loginPage > section {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 0;
+}
+
+.loginPage .loginPage__Box {
+    display: flex;
+    background: rgb(255, 255, 255, 0.6);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    min-height: 175px;
+    text-align: center;
+}

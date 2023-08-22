@@ -1,11 +1,12 @@
-import { Layout } from "@/components/global/Layout";
 import { render, waitFor } from "@testing-library/react";
 import { ConfigProvider } from "antd";
-
-import theme from "@/theme";
-import { useSession } from "next-auth/react";
-import { NEXT_AUTH_SESSION_DATA } from "../data/libs/next-auth";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+
+import { Layout } from "@/components/global/Layout";
+import theme from "@/theme";
+
+import { NEXT_AUTH_SESSION_DATA } from "../data/libs/next-auth";
 
 jest.mock("next-auth/react", () => ({ useSession: jest.fn() }));
 jest.mock("next/router", () => ({ useRouter: jest.fn() }));

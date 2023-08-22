@@ -1,7 +1,9 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+
 import { PrivateRouter } from "@/middlewares/PrivateRouter";
+
 import {
     NEXT_AUTH_NOT_SESSION,
     NEXT_AUTH_SESSION_DATA,

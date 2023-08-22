@@ -1,19 +1,18 @@
-import { AlbumsIcon } from "@/components/icons/AlbumsIcon";
-import { ArtistsIcon } from "@/components/icons/ArtistsIcon";
-import { CurrentSession } from "@/domain/entities/CurrentSession";
-import {
+import Icon, {
     HomeOutlined,
     PoweroffOutlined,
     SearchOutlined,
 } from "@ant-design/icons";
-import Icon from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Button, Menu, Image } from "antd";
-import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { signOut, useSession } from "next-auth/react";
 
-type LayoutMenuProps = {};
-export function LayoutMenu(props: LayoutMenuProps) {
+import { AlbumsIcon } from "@/components/icons/AlbumsIcon";
+import { ArtistsIcon } from "@/components/icons/ArtistsIcon";
+import { CurrentSession } from "@/domain/entities/CurrentSession";
+
+export function LayoutMenu() {
     const router = useRouter();
 
     const handleMenuClick = (destPath: string) => {
@@ -44,7 +43,6 @@ export function LayoutMenu(props: LayoutMenuProps) {
             label: "Search",
             key: "/search",
             icon: <SearchOutlined />,
-            disabled: true,
         },
         {
             label: `${session.user.name}`,
@@ -87,7 +85,6 @@ export function LayoutMenu(props: LayoutMenuProps) {
             <Menu
                 mode="horizontal"
                 items={items}
-                defaultSelectedKeys={["/"]}
                 onClick={(e) => {
                     handleMenuClick(e.key);
                 }}

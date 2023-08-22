@@ -1,6 +1,9 @@
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
+
+import { Spin } from "antd";
+import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+
 import { LOGIN_URL } from "../components/pages/LoginPage";
 
 type PrivateRouterProps = {
@@ -26,5 +29,9 @@ export function PrivateRouter(props: PrivateRouterProps) {
             setLoading(false);
     }, [status]);
 
-    return loading ? <h1>Carregando...</h1> : <>{props.children}</>;
+    return loading ? (
+        <Spin size="large" spinning={loading} />
+    ) : (
+        <>{props.children}</>
+    );
 }

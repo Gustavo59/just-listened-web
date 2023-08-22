@@ -15,7 +15,7 @@ exports[`layout component renders the layout 1`] = `
         tabindex="0"
       >
         <li
-          class="ant-menu-overflow-item ant-menu-item ant-menu-item-selected"
+          class="ant-menu-overflow-item ant-menu-item"
           data-menu-id="rc-menu-uuid-test-/"
           role="menuitem"
           style="opacity: 1; order: 0;"
@@ -128,10 +128,10 @@ exports[`layout component renders the layout 1`] = `
           </span>
         </li>
         <li
-          aria-disabled="true"
-          class="ant-menu-overflow-item ant-menu-item ant-menu-item-disabled"
+          class="ant-menu-overflow-item ant-menu-item"
           role="menuitem"
           style="opacity: 1; order: 3;"
+          tabindex="-1"
         >
           <span
             aria-label="search"

@@ -1,6 +1,7 @@
-import { CurrentSession } from "@/domain/entities/CurrentSession";
 import { Typography } from "antd";
 import { useSession } from "next-auth/react";
+
+import { CurrentSession } from "@/domain/entities/CurrentSession";
 
 const { Title } = Typography;
 

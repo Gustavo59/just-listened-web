@@ -1,7 +1,7 @@
-import { UserController } from "@/controllers/UserController";
 import NextAuth, { AuthOptions } from "next-auth";
-
 import GoogleProvider from "next-auth/providers/google";
+
+import { UserController } from "@/controllers/UserController";
 
 export const config: AuthOptions = {
     providers: [

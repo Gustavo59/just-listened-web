@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
 
-import styles from "./index.module.css";
 import { useRouter } from "next/router";
-import { LayoutMenu } from "./LayoutMenu";
+
+import styles from "./index.module.css";
 import { LayoutBody } from "./LayoutBody";
+import { LayoutMenu } from "./LayoutMenu";
 
 type LayoutProps = {
     children: ReactNode;

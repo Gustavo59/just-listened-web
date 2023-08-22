@@ -1,12 +1,14 @@
 import "@/styles/global.css";
 
-import { Layout } from "@/components/global/Layout";
-import { PrivateRouter } from "@/middlewares/PrivateRouter";
-import { AppProps } from "next/app";
 import { ConfigProvider } from "antd";
-import theme from "@/theme";
+import { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
+
+import { Layout } from "@/components/global/Layout";
 import { startMirage } from "@/external_interfaces/mirage";
+import { PrivateRouter } from "@/middlewares/PrivateRouter";
+import { LoadingProvider } from "@/providers/LoadingProvider";
+import theme from "@/theme";
 
 if (
     process.env.NODE_ENV === "development" &&
@@ -19,9 +21,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <SessionProvider session={pageProps.session}>
             <ConfigProvider theme={theme}>
                 <PrivateRouter>
-                    <Layout>
-                        <Component {...pageProps} />
-                    </Layout>
+                    <LoadingProvider>
+                        <Layout>
+                            <Component {...pageProps} />
+                        </Layout>
+                    </LoadingProvider>
                 </PrivateRouter>
             </ConfigProvider>
         </SessionProvider>

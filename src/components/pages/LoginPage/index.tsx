@@ -1,7 +1,9 @@
 import { Button, Space, Typography } from "antd";
-import style from "./index.module.css";
 import { signIn } from "next-auth/react";
+
 import { GoogleIcon } from "@/components/icons/GoogleIcon";
+
+import style from "./index.module.css";
 
 const { Text } = Typography;
 

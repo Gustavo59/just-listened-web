@@ -1,0 +1,9 @@
+.searchDiv {
+    justify-content: center;
+    min-width: 100vw;
+}
+
+.searchInput {
+    width: 80vw;
+    max-width: 700px;
+}

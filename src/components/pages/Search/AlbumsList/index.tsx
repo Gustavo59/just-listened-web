@@ -1,4 +1,5 @@
 import { Card, Image, Space, Typography } from "antd";
+import { useRouter } from "next/router";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -13,6 +14,8 @@ export type AlbumsListProps = {
 };
 
 export default function AlbumsList({ albums }: AlbumsListProps) {
+    const router = useRouter();
+
     return (
         <Space direction="vertical">
             <Title level={2}>Albums</Title>
@@ -26,34 +29,38 @@ export default function AlbumsList({ albums }: AlbumsListProps) {
                 {albums.map((album) => {
                     return (
                         <SwiperSlide style={{ maxWidth: 200 }} key={album.id}>
-                            <Card
-                                hoverable
-                                style={{ width: 200, marginBottom: 10 }}
-                                cover={
-                                    <Image
-                                        alt={`${album.name} Image`}
-                                        src={album.imageUrl}
-                                        preview={false}
-                                        width={200}
-                                        height={200}
-                                        style={{
-                                            objectFit: "cover",
-                                        }}
-                                    />
-                                }
-                            >
-                                <Meta
-                                    title={album.name}
-                                    description={
-                                        <>
-                                            {album.releaseDate} <br />
-                                            <ArtistsNames
-                                                artistsNames={album.artistsName}
-                                            />
-                                        </>
+                            <a href={`/albums/${album.id}`}>
+                                <Card
+                                    hoverable
+                                    style={{ width: 200, marginBottom: 10 }}
+                                    cover={
+                                        <Image
+                                            alt={`${album.name} Image`}
+                                            src={album.imageUrl}
+                                            preview={false}
+                                            width={200}
+                                            height={200}
+                                            style={{
+                                                objectFit: "cover",
+                                            }}
+                                        />
                                     }
-                                />
-                            </Card>
+                                >
+                                    <Meta
+                                        title={album.name}
+                                        description={
+                                            <>
+                                                {album.releaseDate} <br />
+                                                <ArtistsNames
+                                                    artistsNames={
+                                                        album.artistsName
+                                                    }
+                                                />
+                                            </>
+                                        }
+                                    />
+                                </Card>
+                            </a>
                         </SwiperSlide>
                     );
                 })}

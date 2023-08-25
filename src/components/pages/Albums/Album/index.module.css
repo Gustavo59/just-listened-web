@@ -1,0 +1,13 @@
+.AlbumDiv {
+    justify-content: center;
+    gap: 25px !important;
+}
+
+.AlbumDiv__Info {
+    height: 460px;
+    width: 700px;
+}
+
+.AlbumDiv__InfoName {
+    width: 70px;
+}

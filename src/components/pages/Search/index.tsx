@@ -25,12 +25,12 @@ export function SearchPage() {
         if (query !== "") {
             const delayDebounceFn = setTimeout(() => {
                 setIsLoading(true);
-                SearchController.search(session.accessToken, query).then(
-                    (data) => {
+                SearchController.search(session.accessToken, query)
+                    .then((data) => {
                         setResult(data);
                         setIsLoading(false);
-                    },
-                );
+                    })
+                    .catch(() => setIsLoading(false));
             }, 1000);
 
             return () => {
